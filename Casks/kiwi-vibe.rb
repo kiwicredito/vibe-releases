@@ -20,7 +20,7 @@ cask "kiwi-vibe" do
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/KiwiVibe.app"],
-                   sudo: false
+                   sudo: true
   end
 
   zap trash: [
