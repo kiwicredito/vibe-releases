@@ -17,6 +17,12 @@ cask "kiwi-vibe" do
 
   app "KiwiVibe.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/KiwiVibe.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Support/com.kiwi.vibe",
     "~/Library/Caches/com.kiwi.vibe",
